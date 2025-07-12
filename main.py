@@ -1,12 +1,12 @@
 import requests
 import html
-
+import re # Regular Expression
 response = requests.get("https://zerojudge.tw/ShowProblem?problemid=q838")
 print(f"Response Code: {response.status_code}")
 response.content # 拿 bytes 
 data = response.text # 拿 str
 
-import re # Regular Expression
+
 
 #q838. 3. 貪心闖關
 title = re.findall(r'<title>(.*) - 高中生程式解題系統</title>', data)[0]
